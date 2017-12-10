@@ -15,11 +15,13 @@ plot2 <- function() {
                         format = "%d/%m/%Y %H:%M:%S")
   data <- cbind(data, date_time)
   ## Insert graph generation here
+  
+  png("plot2.png", 480, 480)
+  
   with(data, plot(date_time, Global_active_power, type = "l", 
                   xlab = "", ylab = "Global Active Power (kilowatts)", 
                   cex.lab = 0.8))
   
-  dev.copy(png, file = "plot2.png")
   dev.off()
 }
 

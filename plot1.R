@@ -10,12 +10,13 @@ plot1 <- function() {
   data <- read.table(file, sep = ";", col.names = col_names, 
                      skip = 66637, nrows = 2880)
   
+  png("plot1.png", 480, 480)
+  
   hist(data$Global_active_power, col = "red", 
        main = "Global Active Power", 
        xlab = "Global Active Power (kilowatts)", 
        ylab = "Frequency", cex.axis = 0.8, cex.lab = 0.8)
 
-  dev.copy(png, file = "plot1.png")
   dev.off()
 }
 

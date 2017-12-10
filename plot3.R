@@ -16,6 +16,8 @@ plot3 <- function() {
   data <- cbind(data, date_time)
   
   ## Insert graph generation here
+  png("plot3.png", 480, 480)
+  
   with(data, plot(date_time, Sub_metering_1, 
                   type = "l", xlab = "", 
                   ylab = "Energy sub metering", 
@@ -26,7 +28,6 @@ plot3 <- function() {
                     lty = 1, col = c("black", "red", "blue"),
                     cex = 0.5))
   
-  dev.copy(png, file = "plot3.png")
   dev.off()
 }
 
